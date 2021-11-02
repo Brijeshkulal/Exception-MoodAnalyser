@@ -10,14 +10,16 @@ public class MoodAnalyzerTest {
 		@Test
 		public void givenMessage_IsProper_ShouldReturnSad() {
 			MoodAnalyzer moodAnalyser = new MoodAnalyzer();
-			String actualResult = moodAnalyser.analyseMood("I am Sad in Mood");
+			moodAnalyser.setMessage("I am Sad");
+			String actualResult = moodAnalyser.analyseMood();
 			Assert.assertEquals("SAD", actualResult);
 		}
 		
 		@Test
 		public void givenMessage_IsProper_ShouldReturnHappy() {
 			MoodAnalyzer moodAnalyser = new MoodAnalyzer();
-			String actualResult = moodAnalyser.analyseMood("I am in Any Mood");
+			moodAnalyser.setMessage("I am happy");
+			String actualResult = moodAnalyser.analyseMood();
 			Assert.assertEquals("HAPPY", actualResult);
 		}
 }
