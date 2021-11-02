@@ -19,7 +19,7 @@ public class MoodAnalyzer {
 		this.message = message;
 	}
 	
-	public String analyseMood() {
+	public String analyseMood() throws MoodAnalysisException{
 		try {
 			if (message.toLowerCase().contains("sad")) {
 				return "SAD";
@@ -29,11 +29,11 @@ public class MoodAnalyzer {
 			}
 		}
 		catch (NullPointerException e) {
-			return "HAPPY";
+			throw new MoodAnalysisException("Entered Invalid Mood");
 		}
     }
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) throws MoodAnalysisException  {
 		MoodAnalyzer moodAnalyser = new MoodAnalyzer();
 		
 		moodAnalyser.setMessage("I am Happy");
@@ -43,6 +43,10 @@ public class MoodAnalyzer {
 		System.out.println(moodAnalyser.analyseMood());
 		
 		moodAnalyser.setMessage(null);
-		System.out.println(moodAnalyser.analyseMood());
+		try {
+			System.out.println(moodAnalyser.analyseMood());
+		} catch (MoodAnalysisException e) {
+			e.printStackTrace();
+		}
 	}
 }
