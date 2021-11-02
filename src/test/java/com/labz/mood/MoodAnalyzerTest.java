@@ -24,7 +24,7 @@ public class MoodAnalyzerTest {
 		}
 		
 		@Test
-	    public void givenMessage_Null_ShouldReturnHappy() throws MoodAnalysisException {
+	    public void givenMessage_Null_ShouldReturnInvalidMood() throws MoodAnalysisException {
 			MoodAnalyzer moodAnalyser = new MoodAnalyzer();
 	        moodAnalyser.setMessage(null);
 	        try {
