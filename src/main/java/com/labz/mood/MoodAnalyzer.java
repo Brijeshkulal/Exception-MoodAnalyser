@@ -9,7 +9,9 @@ public class MoodAnalyzer {
 		else if(message.contains("Sad")) {
 			return "sad";
 		}
-		return message;
+		else {
+			return null;
+		}
 	}
 	
 	public static void main(String[] args) {
