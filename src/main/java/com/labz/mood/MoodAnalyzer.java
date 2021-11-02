@@ -41,5 +41,8 @@ public class MoodAnalyzer {
 
 		moodAnalyser.setMessage("I am Sad");
 		System.out.println(moodAnalyser.analyseMood());
+		
+		moodAnalyser.setMessage(null);
+		System.out.println(moodAnalyser.analyseMood());
 	}
 }
